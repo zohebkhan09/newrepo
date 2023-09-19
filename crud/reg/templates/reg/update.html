@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'update' data.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="fname">First name :</label><br>
+        <input type="text" id="fname" name="fn" value="{{data.name}}"><br>
+        <label for="fage">Age :</label><br>
+        <input type="text" id="fage" name="ag" value="{{data.age}}"><br>
+        <label for="email">Email :</label><br>
+        <input type="text" id="femail" name="em" value="{{data.email}}"><br>
+        <label for="image">Image :</label><br>
+        <img src="{{data.image.url}}" alt="" srcset="" >
+        <input type="file" id="fimg" name="img" value=""><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

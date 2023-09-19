@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <h1>SignUp Form</h1>
+        <center><h3 style="color:red">{{msg}}</h3></center>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    <table>
+                        {{form.as_table}}
+                    </table>
+                                <label for="cpass">CPassword:</label>
+        <input class="text w3lpass" value='cpass' type="password" name="cpassword" placeholder="Confirm Password" required="" />
+                    <input type="submit" value="SIGNUP">
+                </form>
+                <p>Don't have an Account? <a href="loginpage"> Login Now!</a></p>
+            </div>
+        </div>
+    </div>
+<!-- //main -->
+</body>
+</html>
